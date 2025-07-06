@@ -1,0 +1,36 @@
+// colors
+$text-dark: #282828;
+$text-light: #ececec;
+$bg-prime: #f9f6ef;
+$accent: #193497;
+$dark-accent: #12274d;
+$bg-second: #eda398;
+
+$brd-radius: 10px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: $bg-prime;
+}
+
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
