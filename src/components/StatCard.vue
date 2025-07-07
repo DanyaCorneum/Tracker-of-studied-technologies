@@ -5,9 +5,19 @@ const props = defineProps<{ class?: string; img?: string }>()
 <template>
   <div :class="`stat-card ${props.class}`">
     <img :src="props.img" alt="image is unloaded" />
-    <header><slot name="header"></slot></header>
+    <header>
+      <slot name="header">
+        <h2>placeholder</h2>
+      </slot>
+    </header>
     <main>
-      <slot name="main"></slot>
+      <slot name="main">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga eligendi magnam in quisquam,
+          consequuntur perferendis numquam repellendus praesentium commodi accusamus fugiat earum
+          assumenda accusantium ullam voluptatibus, illo explicabo doloremque laborum!
+        </p>
+      </slot>
     </main>
     <div class="progress-bar"></div>
     <folow-link>
