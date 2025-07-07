@@ -1,13 +1,4 @@
-// colors
-$text-dark: #282828;
-$text-light: #ececec;
-$bg-prime: #f9f6ef;
-$accent: #193497;
-$dark-accent: #12274d;
-$bg-second: #eda398;
-
-$brd-radius: 10px;
-
+@use './variables' as *;
 *,
 *::before,
 *::after {

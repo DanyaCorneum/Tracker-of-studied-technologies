@@ -1,4 +1,4 @@
-@use './main' as *;
+@use './variables' as *;
 
 @mixin button(
   $bg-color: $accent,
@@ -6,6 +6,7 @@
   $text-color: $text-light,
   $radius: $brd-radius
 ) {
+  box-sizing: border-box;
   background-color: $bg-color;
   padding: 10px 20px;
   border-radius: $radius;
@@ -16,29 +17,32 @@
   }
 }
 
-@mixin image($width: 25%, $height: 25%, $radius: $brd-radius) {
-  img {
-    max-width: $width;
-    max-height: $height;
-    border-radius: $radius;
-  }
-}
-
-@mixin info-card(
+@mixin card(
   $bg-color: $bg-second,
   $title-color: $text-dark,
   $main-color: $text-dark,
   $radius: $brd-radius
 ) {
+  box-sizing: border-box;
+  max-width: 500px;
   padding: 15px;
   background-color: $bg-color;
   border-radius: $radius;
+  img {
+    max-width: 80%;
+    border-radius: $brd-radius;
+  }
   h2 {
     text-transform: capitalize;
     color: $title-color;
     font-weight: 700;
+    font-size: $title-size;
   }
   p {
+    font-size: $text-size;
     color: $main-color;
+  }
+  * {
+    margin-top: 0.2rem;
   }
 }

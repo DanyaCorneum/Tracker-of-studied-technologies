@@ -16,11 +16,10 @@ const props = defineProps<{ class?: string; img?: string }>()
 </template>
 
 <style lang="scss">
-@use '../assets/styles/main' as *;
+@use '../assets/styles/variables' as *;
 @use '../assets/styles/mixins' as *;
 
 .info-card {
-  @include info-card();
-  @include image();
+  @include card();
 }
 </style>
