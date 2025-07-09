@@ -23,6 +23,7 @@ import { RouterLink } from 'vue-router'
   max-width: 98%;
   background-color: $bg-second;
   border-radius: $brd-radius + 20px;
+  box-shadow: 0 0 20px $text-dark;
   .nav-link {
     text-align: center;
     margin: 0 3rem;

@@ -1,36 +1,70 @@
 @use './variables' as *;
 
 @mixin button(
+  $width: 10px,
+  $height: 20px,
   $bg-color: $accent,
   $bg-color-hover: $dark-accent,
-  $text-color: $text-light,
+  $text-color: $text-dark,
   $radius: $brd-radius
 ) {
+  max-width: 300px;
   box-sizing: border-box;
   background-color: $bg-color;
-  padding: 10px 20px;
+  padding: $width $height;
+  margin: 0;
   border-radius: $radius;
   color: $text-color;
+  font-weight: 700;
   transition: 200ms ease;
   &:hover {
     background-color: $bg-color-hover;
+    color: $bg-color;
+  }
+  &:active {
+    transform: translateY(5px);
   }
 }
 
 @mixin card(
   $bg-color: $bg-second,
-  $title-color: $text-dark,
-  $main-color: $text-dark,
-  $radius: $brd-radius
+  $bg-color2: $bg-prime,
+  $title-color: $text-light,
+  $main-color: $text-light,
+  $radius: $brd-radius,
+  $progress: 50%,
+  $img-width: 50%
 ) {
   box-sizing: border-box;
   max-width: 500px;
   padding: 15px;
   background-color: $bg-color;
   border-radius: $radius;
-  img {
-    max-width: 80%;
+  box-shadow: 0 0 20px $text-dark;
+  overflow: hidden;
+  * {
+    background-color: $bg-color2;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: $radius;
+  }
+  h2,
+  p,
+  a {
+    margin: 0;
+  }
+  .bar {
+    max-width: 98%;
+    height: 10px;
+    width: $progress;
+    background-color: $accent;
     border-radius: $brd-radius;
+    padding: 0;
+  }
+  img {
+    background-color: transparent;
+    max-width: $img-width;
+    border-radius: $radius;
   }
   h2 {
     text-transform: capitalize;
@@ -39,10 +73,16 @@
     font-size: $title-size;
   }
   p {
+    max-width: 95%;
+    word-break: break-all;
     font-size: $text-size;
     color: $main-color;
   }
-  * {
-    margin-top: 0.2rem;
+  btn {
+    button {
+      @include button();
+    }
+    background-color: transparent;
+    text-align: center;
   }
 }
