@@ -11,7 +11,6 @@ import ChangeLang from './ChangeLang.vue'
     <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
     <RouterLink to="/login" class="nav-link">Login</RouterLink>
     <div class="settings">
-
       <ChangeTheme />
       <ChangeLang />
     </div>
@@ -46,7 +45,7 @@ import ChangeLang from './ChangeLang.vue'
       background-color: darken($bg-second, $amount: 5%);
     }
   }
-  .settings{
+  .settings {
     display: flex;
     gap: 20px;
     margin: 0 20px;

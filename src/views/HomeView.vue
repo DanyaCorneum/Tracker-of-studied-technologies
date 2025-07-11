@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Button from '@/components/ActButton.vue'
 import InfoCard from '@/components/InfoCard.vue'
-import ChangeLang from '@/components/ChangeLang.vue'
 import InputAdd from '@/components/InputAdd.vue'
 import FormAdd from '@/components/FormAdd.vue'
 </script>
