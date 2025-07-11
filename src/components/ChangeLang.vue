@@ -15,11 +15,11 @@
       </select>
     </form>
   </form>
-  <!-- <Teleport to="body"> -->
-  <div class="modal">
-    <p>Language has been changed</p>
-  </div>
-  <!-- </Teleport> -->
+  <Teleport to="body">
+    <div class="modal">
+      <p>Language has been changed</p>
+    </div>
+  </Teleport>
 </template>
 
 <style lang="scss">
@@ -37,14 +37,16 @@
   // bottom: 0;
   // right: 0;
   // left: 25%;
-  max-width: 500px;
+  max-width: 300px;
   max-height: 200px;
   animation: appear 2s ease forwards;
 }
 
 form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   select {
-    padding: 10px 20px;
     color: $accent;
     background-color: $bg-second;
     border: none;

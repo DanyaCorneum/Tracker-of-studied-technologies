@@ -15,7 +15,7 @@
   margin: 0;
   border-radius: $radius;
   color: $text-color;
-  font-weight: 700;
+  font-weight: 600;
   transition: 200ms ease;
   &:hover {
     background-color: $bg-color-hover;
@@ -42,6 +42,8 @@
   border-radius: $radius;
   box-shadow: 0 0 20px $text-dark;
   overflow: hidden;
+  background-color: transparent;
+  text-align: center;
   * {
     background-color: $bg-color2;
     padding: 10px;
@@ -82,7 +84,5 @@
     button {
       @include button();
     }
-    background-color: transparent;
-    text-align: center;
   }
 }

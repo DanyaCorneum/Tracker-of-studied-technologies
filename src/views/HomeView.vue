@@ -2,28 +2,19 @@
 import Button from '@/components/ActButton.vue'
 import InfoCard from '@/components/InfoCard.vue'
 import ChangeLang from '@/components/ChangeLang.vue'
+import InputAdd from '@/components/InputAdd.vue'
+import FormAdd from '@/components/FormAdd.vue'
 </script>
 
 <template>
+  <FormAdd />
+  <InputAdd :is-button="true"/>
   <Button :class="'btn'">Click me</Button>
-  <ChangeLang />
   <InfoCard
     :class="'inf'"
     :img="'https://i.pinimg.com/736x/40/5d/c5/405dc5cd8143c3c96a98253afb9e0643.jpg'"
     :bar="true"
   >
-    <template #btn>Click me</template>
-  </InfoCard>
-
-  <InfoCard
-    :class="'inf2'"
-    :img="'https://i.pinimg.com/736x/40/5d/c5/405dc5cd8143c3c96a98253afb9e0643.jpg'"
-    :bar="false"
-  >
-    <template #header>Lol</template>
-    <template #main
-      >LOLOLOkmjijioshnbdgjibiwevgbcyibvgsdfgjkndsjfgnjdskfngjkdsnfgjkndsjkfgbjkdsbfgjkhbdsfhgbdhfgblhdsjfkbgldhsjfbgldsfjhgbdsjfhgbjdfhbgjhf</template
-    >
     <template #btn>Click me</template>
   </InfoCard>
 </template>

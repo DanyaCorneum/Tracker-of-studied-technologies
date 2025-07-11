@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import ChangeTheme from './ChangeTheme.vue'
+import ChangeLang from './ChangeLang.vue'
 </script>
 
 <template>
@@ -8,6 +10,11 @@ import { RouterLink } from 'vue-router'
     <RouterLink to="/stats" class="nav-link">Stats</RouterLink>
     <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
     <RouterLink to="/login" class="nav-link">Login</RouterLink>
+    <div class="settings">
+
+      <ChangeTheme />
+      <ChangeLang />
+    </div>
   </div>
 </template>
 
@@ -25,10 +32,10 @@ import { RouterLink } from 'vue-router'
   border-radius: $brd-radius + 20px;
   box-shadow: 0 0 20px $text-dark;
   .nav-link {
-    text-align: center;
-    margin: 0 3rem;
-    padding: 10px 20px;
     min-width: 200px;
+    margin: 0 20px;
+    text-align: center;
+    padding: 10px 20px;
     font-weight: 700;
     font-size: $title-size;
     text-transform: uppercase;
@@ -36,8 +43,13 @@ import { RouterLink } from 'vue-router'
     color: $text-dark;
     transition: 200ms ease;
     &:hover {
-      background-color: darken($color: $bg-second, $amount: 5);
+      background-color: darken($bg-second, $amount: 5%);
     }
+  }
+  .settings{
+    display: flex;
+    gap: 20px;
+    margin-left: 20px;
   }
 }
 </style>
