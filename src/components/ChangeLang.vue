@@ -8,10 +8,9 @@
   <form action="">
     <form action="select">
       <select name="change-lang" id="">
-        <option value="0" disabled>Select pls</option>
         <option value="1">🇷🇺 ru</option>
-        <option value="2">🇬🇧 eng</option>
-        <option value="3">🇨🇳 china</option>
+        <option value="2">🇬🇧 en</option>
+        <option value="3">🇨🇳 ch</option>
       </select>
     </form>
   </form>
@@ -47,12 +46,13 @@ form {
   align-items: center;
   justify-content: center;
   select {
+    appearance: none;
     color: $accent;
     background-color: $bg-second;
     border: none;
     border-radius: $brd-radius;
     font-size: $text-size;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     text-align: center;
     option {

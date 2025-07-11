@@ -49,7 +49,7 @@ import ChangeLang from './ChangeLang.vue'
   .settings{
     display: flex;
     gap: 20px;
-    margin-left: 20px;
+    margin: 0 20px;
   }
 }
 </style>
