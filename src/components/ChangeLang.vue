@@ -14,8 +14,8 @@
       </select>
     </form>
   </form>
-  <Teleport to="body">
-    <div class="modal">
+  <Teleport to="body" style="display: none;">
+    <div class="modal" style="display: none;">
       <p>Language has been changed</p>
     </div>
   </Teleport>
@@ -48,13 +48,16 @@ form {
   select {
     appearance: none;
     color: $accent;
-    background-color: $bg-second;
+    background-color: transparent;
     border: none;
     border-radius: $brd-radius;
     font-size: $text-size;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
     option {
       border-radius: $brd-radius;
       transition: 200ms ease;
@@ -63,6 +66,9 @@ form {
       font-size: $text-size;
       font-weight: 700;
       text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

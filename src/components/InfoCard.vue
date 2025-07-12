@@ -4,7 +4,7 @@ const props = defineProps<{ class?: string; img?: string; link?: string; bar?: b
 </script>
 
 <template>
-  <div :class="`info-card ${props.class}`">
+  <div :class="`${props.class}`">
     <img :src="props.img" alt="image is unloaded" />
     <header>
       <h2>
@@ -30,10 +30,5 @@ const props = defineProps<{ class?: string; img?: string; link?: string; bar?: b
 </template>
 
 <style lang="scss">
-@use '../assets/styles/variables' as *;
-@use '../assets/styles/mixins' as *;
 
-.info-card {
-  @include card();
-}
 </style>

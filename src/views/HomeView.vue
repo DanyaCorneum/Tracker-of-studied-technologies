@@ -1,69 +1,41 @@
 <script setup lang="ts">
-import Button from '@/components/ActButton.vue'
-import InfoCard from '@/components/InfoCard.vue'
-import InputAdd from '@/components/InputAdd.vue'
-import FormAdd from '@/components/FormAdd.vue'
+import ActButton from '@/components/ActButton.vue'
 </script>
 
 <template>
-  <FormAdd />
-  <InputAdd :is-button="true"/>
-  <Button :class="'btn'">Click me</Button>
-  <InfoCard
-    :class="'inf'"
-    :img="'https://i.pinimg.com/736x/40/5d/c5/405dc5cd8143c3c96a98253afb9e0643.jpg'"
-    :bar="true"
-  >
-    <template #btn>Click me</template>
-  </InfoCard>
+  <div class="hero-section">
+    <h1>Welcome</h1>
+    <p>This is a simple website to track your progress in learning any technology.</p>
+    <i>Hope you will enjoy</i>
+    <ActButton :class="`hero-btn`">tutorial?</ActButton>
+  </div>
+  <div class="tutorial"></div>
+  <div class="my-projects"></div>
 </template>
 
 <style lang="scss">
 @use '../assets/styles/variables' as *;
 @use '../assets/styles/mixins' as *;
 
-#app {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.btn {
-  @include button(
-    $width: 20px,
-    $height: 5rem,
-    $bg-color: #c29191,
-    $bg-color-hover: #5b4949,
-    $text-color: $text-dark,
-    $radius: 20px
-  );
-}
-.inf {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 500px;
-  img {
-    margin: 0 auto;
-  }
-}
-.inf2 {
-  @include card(
-    $bg-color: rgb(62, 84, 124),
-    $bg-color2: transparent,
-    $title-color: $text-light,
-    $main-color: $text-light,
-    $radius: $brd-radius + 30px,
-    $progress: 50%,
-    $img-width: 100%
-  );
+.hero-section {
+  margin-top: 250px;
+  margin-bottom: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  * {
-    margin: 0;
+  gap: 1.2rem;
+  color: $text-light;
+  h1 {
+    font-size: 100px;
+  }
+  p {
+    font-size: 40px;
+  }
+  .hero-btn {
+    @include button(20px 50px);
+    font-size: 20px;
+    text-transform: capitalize;
   }
 }
 </style>

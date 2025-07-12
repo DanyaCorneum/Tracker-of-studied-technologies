@@ -17,12 +17,12 @@ import ActButton from './ActButton.vue'
 @use '../assets/styles/mixins' as *;
 
 .form-add {
-  max-width: 27%;
+  max-width: 30%;
   border-radius: $brd-radius;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   gap: 20px;
   padding: 10px 20px;
   background-color: $bg-second;

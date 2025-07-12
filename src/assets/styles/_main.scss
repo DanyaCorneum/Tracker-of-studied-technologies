@@ -8,9 +8,10 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;;
   min-height: 100vh;
   margin: 0;
-  background-color: $bg-prime;
+  background: radial-gradient(circle at 25% top, darken($dark-accent, 2%), $bg-second);
 }
 
 button {
