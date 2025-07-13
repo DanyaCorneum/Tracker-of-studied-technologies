@@ -5,75 +5,77 @@ import ParticleContainer from '../components/ParticleContainer.vue'
 </script>
 
 <template>
-  <ParticleContainer />
-  <div class="hero-section">
-    <h1>Welcome</h1>
-    <p>This is a simple website to track your progress in learning any technology.</p>
-    <i>Hope you will enjoy</i>
-    <a href="#tutorial">
-      <ActButton :class="`hero-btn`">tutorial?</ActButton>
-    </a>
-  </div>
-  <div class="tutorial" id="tutorial">
-    <h1>Tutorial</h1>
-    <InfoCard
-      class="tutorial-card"
-      id="t1"
-      :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
-    ></InfoCard>
-    <InfoCard
-      class="tutorial-card"
-      id="t2"
-      :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
-    ></InfoCard>
-    <InfoCard
-      class="tutorial-card"
-      id="t3"
-      :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
-    ></InfoCard>
-    <RouterLink to="/stats" class="nav-link"
-      ><ActButton :class="`router-btn`">Let's go</ActButton></RouterLink
-    >
-  </div>
-  <div class="my-projects">
-    <h1>My other projects</h1>
-    <div class="my-projects__inner">
+  <div class="home">
+    <ParticleContainer />
+    <div class="hero-section">
+      <h1>Welcome</h1>
+      <p>This is a simple website to track your progress in learning any technology.</p>
+      <i>Hope you will enjoy</i>
+      <a href="#tutorial">
+        <ActButton :class="`hero-btn`">tutorial?</ActButton>
+      </a>
+    </div>
+    <div class="tutorial" id="tutorial">
+      <h1>Tutorial</h1>
       <InfoCard
-        class="project"
-        :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
-        :button="true"
-      >
-        <template #act>
-          <a href="https://github.com/" target="_blank">More</a>
-        </template></InfoCard
-      >
+        class="tutorial-card"
+        id="t1"
+        :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
+      ></InfoCard>
       <InfoCard
-        class="project"
-        :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
-        :button="true"
-      >
-        <template #act>
-          <a href="https://github.com/" target="_blank">More</a>
-        </template></InfoCard
-      >
+        class="tutorial-card"
+        id="t2"
+        :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
+      ></InfoCard>
       <InfoCard
-        class="project"
-        :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
-        :button="true"
+        class="tutorial-card"
+        id="t3"
+        :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
+      ></InfoCard>
+      <RouterLink to="/stats" class="nav-link"
+        ><ActButton :class="`router-btn`">Let's go</ActButton></RouterLink
       >
-        <template #act>
-          <a href="https://github.com/" target="_blank">More</a>
-        </template></InfoCard
-      >
-      <InfoCard
-        class="project"
-        :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
-        :button="true"
-      >
-        <template #act>
-          <a href="https://github.com/" target="_blank">More</a>
-        </template>
-      </InfoCard>
+    </div>
+    <div class="my-projects">
+      <h1>My other projects</h1>
+      <div class="my-projects__inner">
+        <InfoCard
+          class="project"
+          :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
+          :button="true"
+        >
+          <template #act>
+            <a href="https://github.com/" target="_blank">More</a>
+          </template></InfoCard
+        >
+        <InfoCard
+          class="project"
+          :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
+          :button="true"
+        >
+          <template #act>
+            <a href="https://github.com/" target="_blank">More</a>
+          </template></InfoCard
+        >
+        <InfoCard
+          class="project"
+          :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
+          :button="true"
+        >
+          <template #act>
+            <a href="https://github.com/" target="_blank">More</a>
+          </template></InfoCard
+        >
+        <InfoCard
+          class="project"
+          :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
+          :button="true"
+        >
+          <template #act>
+            <a href="https://github.com/" target="_blank">More</a>
+          </template>
+        </InfoCard>
+      </div>
     </div>
   </div>
 </template>
