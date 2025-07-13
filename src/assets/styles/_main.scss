@@ -7,9 +7,12 @@
   font-weight: normal;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Inter", sans-serif;;
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
   background: radial-gradient(circle at 25% top, darken($dark-accent, 2%), $bg-second);
 }

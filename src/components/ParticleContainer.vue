@@ -12,6 +12,7 @@
 .particle-container {
   overflow: hidden;
   max-width: 100%;
+  max-height: 100%;
   .particle {
     opacity: 0.5;
     z-index: -1;
@@ -27,9 +28,9 @@
         px;
       width: $n;
       height: $n;
-      top: random() * 100%;
+      top: random(400) * 1%;
       left: (random() - 0.05) * 100%;
-      animation: particle-motion (random($limit: 12)+4)+s ease-in-out infinite;
+      animation: particle-motion (random($limit: 12) + 4) + s ease-in-out infinite;
     }
   }
   @keyframes particle-motion {

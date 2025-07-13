@@ -27,9 +27,7 @@ import ChangeLang from './ChangeLang.vue'
   padding: 0.5rem 0.5rem;
   margin: 0.5rem auto;
   max-width: 98%;
-  background: radial-gradient(circle top, $bg-prime, $bg-second  );
   border-radius: $brd-radius;
-  box-shadow: 0 0 20px $text-dark;
   .nav-link {
     min-width: 200px;
     margin: 0 20px;
@@ -42,8 +40,9 @@ import ChangeLang from './ChangeLang.vue'
     color: $text-light;
     transition: 200ms ease;
     &:hover {
+      backdrop-filter: blur(1px);
       box-shadow: 0 0 10px $bg-second;
-      background-color: darken($bg-second, $amount: 5%);
+      background-color: darken(rgba($bg-second, 0.6), $amount: 5%);
     }
   }
   .settings {
