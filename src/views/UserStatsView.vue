@@ -26,9 +26,22 @@ import { RouterView } from 'vue-router'
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 35%;
     .nav-link {
-      background: $bg-prime;
+      color: $text-light;
+      font-weight: 700;
+      background: transparent;
+      padding: 20px 80px;
+      border-radius: $brd-radius+20px;
+      transition: 200ms ease;
+      &:hover{
+        background: $bg-second;
+        box-shadow: 0 0px 50px $bg-second;
+      }
+      &:active{
+        color:$accent;
+        background: darken($bg-second, 5%);
+      }
     }
   }
 }

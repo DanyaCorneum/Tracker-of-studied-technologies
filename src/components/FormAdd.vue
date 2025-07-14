@@ -5,8 +5,11 @@ import ActButton from './ActButton.vue'
 
 <template>
   <form @submit.prevent="" class="form-add">
+    <p>Name</p>
     <InputAdd class="name" :is-big="true">Name</InputAdd>
+    <p>Description</p>
     <InputAdd class="description" :is-big="true">Description</InputAdd>
+    <p>Current progress</p>
     <InputAdd class="progress" :is-big="true">Current progress</InputAdd>
     <ActButton class="submit">Submit</ActButton>
   </form>
@@ -17,16 +20,21 @@ import ActButton from './ActButton.vue'
 @use '../assets/styles/mixins' as *;
 
 .form-add {
-  max-width: 30%;
-  border-radius: $brd-radius;
+  width: 50%;
+  border-radius: $brd-radius + 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 20px;
-  padding: 10px 20px;
-  background-color: $bg-second;
+  padding: 20px 40px;
+  background: radial-gradient(circle at 25% top, rgba($bg-second, 0.8), rgba($accent, 0.5));
   box-shadow: 0 0 20px $text-dark;
+  p {
+    font-size: $text-size + 15px;
+    color: $text-light;
+    font-weight: 600;
+  }
   textarea,
   input {
     width: 350px;
@@ -37,8 +45,9 @@ import ActButton from './ActButton.vue'
   input,
   .progress textarea,
   input {
-    border-top-right-radius: $brd-radius;
-    border-bottom-right-radius: $brd-radius;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: $brd-radius + 30;
   }
   .description {
     textarea,
@@ -48,7 +57,8 @@ import ActButton from './ActButton.vue'
     }
   }
   .submit {
-    @include button();
+    @include button($width: 40px);
+    border-radius: $brd-radius + 30;
   }
 }
 </style>

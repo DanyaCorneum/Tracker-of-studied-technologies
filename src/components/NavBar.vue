@@ -41,7 +41,7 @@ import ChangeLang from './ChangeLang.vue'
     &:hover {
       backdrop-filter: blur(1px);
       box-shadow: 0 0 10px $bg-second;
-      background-color: darken(rgba($bg-second, 0.6), $amount: 5%);
+      background-color: lighten(rgba($bg-second, 0.6), $amount: 20%);
     }
   }
   .settings {
