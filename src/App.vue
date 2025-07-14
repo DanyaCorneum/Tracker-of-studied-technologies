@@ -17,7 +17,7 @@ import { RouterView } from 'vue-router'
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 200ms linear;
+  transition: all 500ms linear;
 }
 
 .fade-enter-from {
