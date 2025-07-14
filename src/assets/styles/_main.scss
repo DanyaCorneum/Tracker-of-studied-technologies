@@ -14,7 +14,7 @@ body {
   font-family: "Inter", sans-serif;;
   height: 100%;
   margin: 0;
-  background: radial-gradient(circle at 25% top, darken($dark-accent, 2%), $bg-second);
+  background: radial-gradient(circle at 25% top, darken($dark-accent, 20%), $bg-second);
 }
 
 button {
