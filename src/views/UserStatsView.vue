@@ -10,13 +10,31 @@ import { RouterView } from 'vue-router'
       <RouterLink to="stats" class="nav-link">Stats</RouterLink>
     </div>
     <div class="view">
-      <RouterView></RouterView>
+      <router-view v-slot="{ Component }">
+        <transition name="slide-fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/styles/variables' as *;
+
+.slide-fade-enter-active {
+  transition: all 300ms 500ms ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 400ms cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
 
 .user-stats {
   display: flex;
@@ -32,14 +50,14 @@ import { RouterView } from 'vue-router'
       font-weight: 700;
       background: transparent;
       padding: 20px 80px;
-      border-radius: $brd-radius+20px;
+      border-radius: $brd-radius + 20px;
       transition: 200ms ease;
-      &:hover{
+      &:hover {
         background: $bg-second;
         box-shadow: 0 0px 50px $bg-second;
       }
-      &:active{
-        color:$accent;
+      &:active {
+        color: $accent;
         background: darken($bg-second, 5%);
       }
     }

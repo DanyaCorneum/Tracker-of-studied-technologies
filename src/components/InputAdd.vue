@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import ActButton from './ActButton.vue'
-const props = defineProps<{ isButton?: boolean; isBig?: boolean }>()
+const props = defineProps<{class?:string; isButton?: boolean; isBig?: boolean }>()
 </script>
 
 <template>
-  <div class="input-add">
+  <div :class="`input-add ${props.class}`">
     <textarea
       name=""
       id=""

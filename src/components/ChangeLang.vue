@@ -1,75 +1,95 @@
 <script setup lang="ts">
-// import { ref } from 'vue'
-// import type { Ref } from 'vue'
-// const open: Ref<boolean> = ref(false)
+import { type Ref, ref } from 'vue'
+
+const language: Ref<string> = ref('en')
+const isOpen: Ref<boolean> = ref(false)
+
+function selectLang(): void {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
-  <form action="">
-    <form action="select">
-      <select name="change-lang" id="">
-        <option value="1">🇷🇺 ru</option>
-        <option value="2">🇬🇧 en</option>
-        <option value="3">🇨🇳 ch</option>
-      </select>
-    </form>
-  </form>
-  <Teleport to="body" style="display: none;">
-    <div class="modal" style="display: none;">
-      <p>Language has been changed</p>
+  <div class="change-lang" :class="{ focus: isOpen }" @click="selectLang">
+    <div class="title">
+      <h2>{{ language }}</h2>
     </div>
-  </Teleport>
+    <div class="select" :class="{ selected: isOpen }" style="">
+      <div class="option ru" @click="language = 'RU'">RU 🇷🇺</div>
+      <div class="option en" @click="language = 'EN'">EN 🇬🇧</div>
+      <div class="option ch" @click="language = 'CH'">CH 🇨🇳</div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
+@use '../assets/styles/mixins' as *;
 @use '../assets/styles/variables' as *;
 
-.modal {
-  background-color: darken($text-dark, 10%);
-  color: $text-light;
-  text-align: center;
-  font-size: $text-size;
-  padding: 50px 60px;
-  border-radius: $brd-radius;
-  // position: absolute;
-  // top: 50%;
-  // bottom: 0;
-  // right: 0;
-  // left: 25%;
-  max-width: 300px;
-  max-height: 200px;
-  animation: appear 2s ease forwards;
-}
-
-form {
+.change-lang {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  select {
-    appearance: none;
-    color: $accent;
-    background-color: transparent;
-    border: none;
-    border-radius: $brd-radius;
-    font-size: $text-size;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    &:hover {
-      cursor: pointer;
-    }
-    option {
-      border-radius: $brd-radius;
-      transition: 200ms ease;
-      background-color: $bg-prime;
-      text-align: center;
-      font-size: $text-size;
+  padding: 0 1.5rem;
+  border-radius: $brd-radius + 20px;
+  background: transparent;
+  transition: ease 0.3s;
+  height: 100%;
+
+  .title {
+    h2 {
       font-weight: 700;
+      font-size: 1rem;
+      color: white;
       text-transform: uppercase;
-      &:hover {
-        cursor: pointer;
-      }
+      max-width: 22px;
     }
   }
+
+  .select {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 100ms linear;
+
+    .option {
+      font-weight: 700;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(1px);
+      background-color: lighten(rgba($bg-second, 0.6), $amount: 20%);
+      border-radius: $brd-radius + 20px;
+      color: $text-light;
+    }
+  }
+
+  .selected {
+    max-height: 500px;
+    opacity: 1;
+    //display: none;
+  }
+
+  &:hover {
+    backdrop-filter: blur(1px);
+    box-shadow: 0 0 10px $bg-second;
+    background-color: lighten(rgba($bg-second, 0.6), $amount: 20%);
+    cursor: pointer;
+  }
+}
+
+.focus {
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 10px $bg-second;
+  background-color: lighten(rgba($bg-second, 0.6), $amount: 20%);
+  cursor: pointer;
 }
 </style>

@@ -6,6 +6,11 @@ import ParticleContainer from '../components/ParticleContainer.vue'
 
 <template>
   <div class="home">
+    <DropdownMenu>
+      <template #header>
+        <h1 style="color: white">HELLO WORLD</h1>
+      </template>
+    </DropdownMenu>>
     <ParticleContainer />
     <div class="hero-section">
       <h1>Welcome</h1>

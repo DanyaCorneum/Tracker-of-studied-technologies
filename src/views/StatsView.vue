@@ -3,18 +3,20 @@ import FormAdd from '@/components/FormAdd.vue'
 </script>
 
 <template>
-  <div class="stats-page">
-    <div class="my-stats">
-      <h1>My current stats</h1>
-      <p>There is empty space...</p>
+  <div class="stat">
+    <div class="stats-page">
+      <div class="my-stats">
+        <h1>My current stats</h1>
+        <p>There is empty space...</p>
+      </div>
     </div>
-  </div>
-  <div class="stats">
-    <div class="stats-tutorial">
-      <h1>Add new stat</h1>
-      <p>Enter the name, description, and current progress of the skill.</p>
+    <div class="stats">
+      <div class="stats-tutorial">
+        <h1>Add new stat</h1>
+        <p>Enter the name, description, and current progress of the skill.</p>
+      </div>
+      <FormAdd />
     </div>
-    <FormAdd />
   </div>
 </template>
 
