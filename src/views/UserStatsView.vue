@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { RouterView } from 'vue-router'
+import ParticleContainer from '@/components/ParticleContainer.vue'
 </script>
 
 <template>
   <div class="user-stats">
+    <ParticleContainer :count="200"/>
     <div class="links">
       <RouterLink to="users" class="nav-link">Users</RouterLink>
       <RouterLink to="stats" class="nav-link">Stats</RouterLink>

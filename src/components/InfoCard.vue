@@ -2,16 +2,19 @@
 import ActButton from './ActButton.vue'
 const props = defineProps<{
   class?: string
+  hasImg: boolean
   img?: string
   link?: string
   bar?: boolean
   button?: boolean
 }>()
+
+
 </script>
 
 <template>
   <div :class="`${props.class}`">
-    <img :src="props.img" alt="image is unloaded" />
+    <img :src="props.img" alt="image is unloaded" :style="`${props.hasImg ? 'display: block' : 'display: none'}`" />
     <div class="info-card__inner">
       <header>
         <h2>

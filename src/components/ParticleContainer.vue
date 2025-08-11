@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { randomIntFromInterval } from '@/utils/randomFromRange.ts'
+
+const props = defineProps<{count: number}>()
+</script>
 
 <template>
   <div class="particle-container">
-    <div v-for="n in 100" v-bind:key="n" class="particle"></div>
+    <div v-for="n in 100" v-bind:key="n" class="particle" :style="`top: ${randomIntFromInterval(0, count)}%`"></div>
   </div>
 </template>
 

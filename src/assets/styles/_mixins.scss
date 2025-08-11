@@ -66,14 +66,7 @@
   a {
     margin: 0;
   }
-  .bar {
-    max-width: 98%;
-    height: 10px;
-    width: $progress;
-    background-color: $accent;
-    border-radius: $brd-radius;
-    padding: 0;
-  }
+
   img {
     margin-top: 0;
     background-color: transparent;
@@ -100,3 +93,24 @@
     }
   }
 }
+
+@mixin input() {
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: $brd-radius + 30;
+  word-break: break-all;
+  border: 3px solid transparent;
+  color: $text-dark;
+  transition: 200ms ease;
+  font-weight: 600;
+  &:focus {
+    outline: none;
+    border: 3px solid $accent;
+  }
+
+  &:focus:hover {
+    outline: none;
+    border: 3px solid $accent;
+  }
+}
+

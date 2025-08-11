@@ -6,12 +6,7 @@ import ParticleContainer from '../components/ParticleContainer.vue'
 
 <template>
   <div class="home">
-    <DropdownMenu>
-      <template #header>
-        <h1 style="color: white">HELLO WORLD</h1>
-      </template>
-    </DropdownMenu>>
-    <ParticleContainer />
+    <ParticleContainer :count="500"/>
     <div class="hero-section">
       <h1>Welcome</h1>
       <p>This is a simple website to track your progress in learning any technology.</p>
@@ -23,16 +18,19 @@ import ParticleContainer from '../components/ParticleContainer.vue'
     <div class="tutorial" id="tutorial">
       <h1>Tutorial</h1>
       <InfoCard
+        :has-img="true"
         class="tutorial-card"
         id="t1"
         :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
       ></InfoCard>
       <InfoCard
+        :has-img="true"
         class="tutorial-card"
         id="t2"
         :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
       ></InfoCard>
       <InfoCard
+        :has-img="true"
         class="tutorial-card"
         id="t3"
         :img="'https://i.pinimg.com/736x/a2/92/f5/a292f5b227f801feae5ef1a8860a13c7.jpg'"
@@ -45,6 +43,7 @@ import ParticleContainer from '../components/ParticleContainer.vue'
       <h1>My other projects</h1>
       <div class="my-projects__inner">
         <InfoCard
+          :has-img="true"
           class="project"
           :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
           :button="true"
@@ -54,6 +53,7 @@ import ParticleContainer from '../components/ParticleContainer.vue'
           </template></InfoCard
         >
         <InfoCard
+          :has-img="true"
           class="project"
           :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
           :button="true"
@@ -63,6 +63,7 @@ import ParticleContainer from '../components/ParticleContainer.vue'
           </template></InfoCard
         >
         <InfoCard
+          :has-img="true"
           class="project"
           :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
           :button="true"
@@ -72,6 +73,7 @@ import ParticleContainer from '../components/ParticleContainer.vue'
           </template></InfoCard
         >
         <InfoCard
+          :has-img="true"
           class="project"
           :img="'https://i.pinimg.com/736x/e6/d8/29/e6d829b2bafbc6c4fb0c1e7ab3dd136a.jpg'"
           :button="true"

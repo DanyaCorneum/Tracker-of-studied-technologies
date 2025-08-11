@@ -2,11 +2,13 @@
 const props = defineProps<{
   class?: string
 }>()
-// const emits = defineEmits<{}>()
+const emits = defineEmits<{
+  (e: "onclick"): void
+}>()
 </script>
 
 <template>
-  <button :class="`${props.class}`"><slot /></button>
+  <button @click="$emit('onclick')" :class="`${props.class}`"><slot /></button>
 </template>
 
 <style lang="scss" scoped>

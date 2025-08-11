@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import InputAdd from '@/components/InputAdd.vue'
+import SelectUser from '@/components/SelectUser.vue'
 </script>
 
 <template>
@@ -15,14 +16,7 @@ import InputAdd from '@/components/InputAdd.vue'
     </form>
     <div class="select-user">
       <h1>Select user</h1>
-      <form>
-        <select name="" id="">
-          <option value="1">user1</option>
-          <option value="2">user2</option>
-          <option value="3">user3</option>
-          <option value="4">user4</option>
-        </select>
-      </form>
+      <SelectUser />
     </div>
   </div>
 </template>
