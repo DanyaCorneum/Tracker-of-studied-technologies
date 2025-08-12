@@ -5,7 +5,7 @@ import ActButton from './ActButton.vue'
 import { useCurrentData } from '@/stores/currentData.ts'
 import { ref } from 'vue'
 
-const props = defineProps({ class: String })
+const props = defineProps({ class: String  })
 defineEmits<{
   (e: 'onsubmit'): CurrentStats
 }>()

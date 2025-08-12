@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import FormAdd from '@/components/FormAdd.vue'
-import { type Reactive, reactive, ref, computed } from 'vue'
-import type { Ref } from 'vue'
-import type CurrentStats from '@/types/StatsType.ts'
+import { computed } from 'vue'
 import StatCard from '@/components/StatsCard.vue'
 import { useCurrentData } from '@/stores/currentData.ts'
-import InfoCard from '@/components/InfoCard.vue'
 
 const currentData = useCurrentData()
 const data = computed(() => {
+  console.log('data', data)
   return currentData.getData
 })
 </script>
@@ -18,8 +16,8 @@ const data = computed(() => {
     <div class="stats-page">
       <div class="my-stats">
         <h1>My current stats</h1>
-        <p v-if="!data">There is empty space...</p>
-        <StatCard :class="'my-stat'" :current-progress="Number(data.progress)">
+        <p v-if="!currentData.isValid" :style="'color: white'">There is empty space...</p>
+        <StatCard v-else :class="'my-stat'" :current-progress="Number(data.progress)">
           <template #header>
             <h2>{{ data.name }}</h2>
           </template>
@@ -50,7 +48,7 @@ const data = computed(() => {
   gap: 40px;
   justify-content: space-around;
   align-items: center;
-  margin: 100px auto;
+  margin: 20px auto;
   padding: 0 100px;
 
   .my-stats {
@@ -73,16 +71,20 @@ const data = computed(() => {
       justify-content: center;
       align-items: center;
       text-align: center;
-      h2{
+
+      h2 {
         font-size: 18px * 2;
       }
-      p{
+
+      p {
         text-align: center;
       }
+
       .act-button {
         display: flex;
         justify-content: center;
         align-content: center;
+
         button {
           width: 100%;
           max-width: 250px;

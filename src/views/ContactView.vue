@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import FormAdd from '@/components/FormAdd.vue'
 import ParticleContainer from '@/components/ParticleContainer.vue'
+import FormSend from '@/components/FormSend.vue'
 </script>
 
 <template>
   <div class="contact">
-    <ParticleContainer :count="150"/>
+    <ParticleContainer :count="200"/>
     <h1 class="title">Contact with me</h1>
     <div class="contact__inner">
       <img src="../assets/img/imageContact.jpg" class="image-to-contact" alt="contact" />
@@ -24,11 +24,11 @@ import ParticleContainer from '@/components/ParticleContainer.vue'
         </a>
       </div>
     </div>
-    <FormAdd class="form-write"  >
+    <FormSend class="form-write"  >
       <template #title>Full name</template>
       <template #main>Your message</template>
       <template #footer>Email</template>
-    </FormAdd>
+    </FormSend>
   </div>
 </template>
 

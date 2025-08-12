@@ -6,7 +6,7 @@ import ParticleContainer from '@/components/ParticleContainer.vue'
 
 <template>
   <div class="user-stats">
-    <ParticleContainer :count="200"/>
+    <ParticleContainer :count="150"/>
     <div class="links">
       <RouterLink to="users" class="nav-link">Users</RouterLink>
       <RouterLink to="stats" class="nav-link">Stats</RouterLink>
@@ -41,7 +41,6 @@ import ParticleContainer from '@/components/ParticleContainer.vue'
 .user-stats {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   .links {
     display: flex;
     justify-content: center;

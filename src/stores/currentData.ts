@@ -13,10 +13,13 @@ export const useCurrentData = defineStore('currentData', () => {
     description: description.value,
     progress: progress.value,
   })
-
+  const isValid = computed(() => {
+      return name.value && description.value && progress.value !== 0
+  })
   const getData = computed<CurrentStats>(() => {
     return stats
   })
+
   const changeData = (key: string, value: string): void => {
     if (key === 'name') {
       name.value = value
@@ -29,5 +32,5 @@ export const useCurrentData = defineStore('currentData', () => {
       stats[key] = Number(value)
     }
   }
-  return { name, description, progress, getData, changeData }
+  return { name, description, progress, getData, changeData, isValid }
 })
