@@ -14,10 +14,7 @@ import SelectUser from '@/components/SelectUser.vue'
       </p>
       <InputAdd :class="'input'" :is-button="true">Add</InputAdd>
     </form>
-    <div class="select-user">
-      <h1>Select user</h1>
-      <SelectUser />
-    </div>
+    <h1>SOON</h1>
   </div>
 </template>
 

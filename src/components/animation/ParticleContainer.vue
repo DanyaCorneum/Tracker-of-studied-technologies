@@ -11,7 +11,7 @@ const props = defineProps<{count: number}>()
 </template>
 
 <style lang="scss">
-@use '../assets/styles/variables' as *;
+@use '../../assets/styles/variables' as *;
 
 .particle-container {
   overflow: hidden;

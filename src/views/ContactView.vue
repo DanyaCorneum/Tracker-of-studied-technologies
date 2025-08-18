@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ParticleContainer from '@/components/ParticleContainer.vue'
+import ParticleContainer from '@/components/animation/ParticleContainer.vue'
 import FormSend from '@/components/FormSend.vue'
 </script>
 

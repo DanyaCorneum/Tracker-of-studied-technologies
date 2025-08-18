@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import ActButton from '@/components/ActButton.vue'
 import InfoCard from '@/components/InfoCard.vue'
-import ParticleContainer from '../components/ParticleContainer.vue'
+import ParticleContainer from '../components/animation/ParticleContainer.vue'
+import Example from '@/components/animation/Example.vue'
 </script>
 
 <template>
   <div class="home">
-    <ParticleContainer :count="600"/>
+    <ParticleContainer :count="500"/>
+    <Example/>
     <div class="hero-section">
       <h1>Welcome</h1>
       <p>This is a simple website to track your progress in learning any technology.</p>
