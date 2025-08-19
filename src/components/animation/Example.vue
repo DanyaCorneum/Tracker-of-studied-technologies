@@ -8,14 +8,15 @@ const canvasContainer = ref<HTMLElement | null>(null);
 onMounted(() => {
 console.log('canvasContainer', canvasContainer.value);
   if (canvasContainer.value) {
-    useCube(canvasContainer);
+    useCube(canvasContainer.value);
   }
 });
 
 </script>
 
 <template>
-  <div ref="canvasContainer" class="three-container"></div>
+  <canvas
+    ref="canvasContainer" class="three-container"></canvas>
 </template>
 
 <style scoped>

@@ -4,6 +4,7 @@ import UserStatsView from '@/views/UserStatsView.vue'
 import ContactView from '@/views/ContactView.vue'
 import UserView from '@/views/UserView.vue'
 import StatsView from '@/views/StatsView.vue'
+import AnimationView from '@/views/AnimationView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,7 @@ const router = createRouter({
       ],
     },
     { path: '/contact', component: ContactView },
+    {path: '/animation', component: AnimationView },
   ],
 })
 

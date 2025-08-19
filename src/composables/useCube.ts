@@ -1,77 +1,63 @@
-import * as THREE from 'three';
-import { ref, onUnmounted, type Ref } from 'vue';
+import * as THREE from 'three'
+import {  reactive } from 'vue'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-export function useCube(canvasContainer: Ref<HTMLElement | null>) {
+export function useCube(canvasContainer: HTMLElement) {
   // Проверка наличия контейнера
-  if (!canvasContainer.value) {
-    console.error('Canvas container is not available');
-    return;
+  if (!canvasContainer) {
+    console.error('Canvas container is not available')
+    return
+  }
+  const sizes = {
+    width: 1000,
+    height: 1000,
   }
 
-  // Инициализация Three.js
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-
-  // Настройка рендерера
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  canvasContainer.value.appendChild(renderer.domElement);
-
-  // Создание куба
-  const geometry = new THREE.BoxGeometry();
-  const cubeColor = ref(0x00ff00);
-  const material = new THREE.MeshBasicMaterial({ color: cubeColor.value });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
-
-  camera.position.z = 5;
-
-  // Обработка изменения размера окна
-  const handleResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  };
-  window.addEventListener('resize', handleResize);
-
-  // Анимация
-  let animationId: number;
-  const animate = () => {
-    animationId = requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  };
-  animate();
-
-  // Функция изменения цвета
-  const changeCubeColor = (newColor: number) => {
-    cubeColor.value = newColor;
-    material.color.setHex(newColor);
-  };
-
-  // Очистка
-  onUnmounted(() => {
-    cancelAnimationFrame(animationId);
-    window.removeEventListener('resize', handleResize);
-    renderer.dispose();
-    if (canvasContainer.value && renderer.domElement.parentNode === canvasContainer.value) {
-      canvasContainer.value.removeChild(renderer.domElement);
+  const scene = new THREE.Scene()
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+  const controls = new OrbitControls(camera, canvasContainer)
+  controls.enableDamping = true
+  const geometry = new THREE.BoxGeometry(1, 1, 1)
+  const material = new THREE.MeshBasicMaterial({ color: 'white' })
+  const group = new THREE.Group()
+  const meshes: THREE.Mesh[] = []
+  for (let x = -3; x <= 3; x += 3) {
+    for (let y = -3; y <= 3; y += 3) {
+      const mesh = new THREE.Mesh(geometry, material)
+      mesh.position.set(x, y, 0)
+      mesh.castShadow = true
+      mesh.scale.set(0.5, 0.5, 0.5)
+      meshes.push(mesh)
     }
-  });
+  }
+  const position = reactive({x: 0, y: 0})
+  const getPosition = (event: MouseEvent) => {
+    position.x = event.x + window.screenX*100
+    position.y = event.y + window.screenY*100
+  }
+  document.addEventListener('mousemove', getPosition)
 
-  return {
-    scene,
-    camera,
-    renderer,
-    cube,
-    cubeColor,
-    changeCubeColor
-  };
+  group.add(...meshes)
+  scene.add(group)
+
+  camera.position.set(0, 1, 5)
+  const renderer = new THREE.WebGLRenderer({ canvas: canvasContainer, antialias: true })
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setClearColor('#000', 0)
+
+  const clock = new THREE.Clock()
+  const tick = () => {
+    renderer.render(scene, camera)
+    const delta = clock.getDelta()
+    controls.update(delta)
+
+    meshes.forEach((item, index) => {
+      const isEven = index % 2 === 0 ? 1 : -1
+      item.rotation.x += delta * isEven
+      item.rotation.y += delta * isEven
+      item.rotation.z += delta * isEven
+    })
+    requestAnimationFrame(tick)
+  }
+  tick()
 }

@@ -9,6 +9,7 @@ import ChangeLang from './ChangeLang.vue'
     <RouterLink to="/" class="nav-link">Home</RouterLink>
     <RouterLink to="/stats" class="nav-link">Stats</RouterLink>
     <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
+    <RouterLink to="/animation" class="nav-link">animation</RouterLink>
     <div class="settings">
       <ChangeTheme />
       <ChangeLang />

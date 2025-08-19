@@ -8,7 +8,6 @@ import Example from '@/components/animation/Example.vue'
 <template>
   <div class="home">
     <ParticleContainer :count="500"/>
-    <Example/>
     <div class="hero-section">
       <h1>Welcome</h1>
       <p>This is a simple website to track your progress in learning any technology.</p>
